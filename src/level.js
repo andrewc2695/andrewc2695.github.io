@@ -154,6 +154,25 @@ const level = {
                     {pos: [870, 165], vel: [2, 0], height: 60, width: 60, track: 2000} ],
         goal: { pos: [200, 270], vel: [0, 0], height: 75, width: 39 },
         title: "They Can Move?"
+    },
+    6: {
+        userObject: {pos:[10, 265], vel:[5, 0]},
+        goal: { pos: [950, 270], vel: [0, 0], height: 75, width: 39 },
+        walls: [],
+        coins: [],
+        energyBalls: [{ pos: [150, 200], vel: [0, 3], height: 60, width: 60, track: 4200},
+                    { pos: [150, 350], vel: [0, -3], height: 60, width: 60, track: 4200 },
+                    { pos: [330, 350], vel: [0, -3], height: 60, width: 60, track: 4200 },
+                    { pos: [330, 200], vel: [0, 3], height: 60, width: 60, track: 4200 },
+                    { pos: [520, 200], vel: [0, 3], height: 60, width: 60, track: 4200 },
+                    { pos: [520, 350], vel: [0, -3], height: 60, width: 60, track: 4200 },
+                    { pos: [700, 350], vel: [0, -3], height: 60, width: 60, track: 4200 },
+                    { pos: [700, 200], vel: [0, 3], height: 60, width: 60, track: 4200 },
+                    { pos: [880, 350], vel: [0, -3], height: 60, width: 60, track: 4200 },
+                    { pos: [880, 200], vel: [0, 3], height: 60, width: 60, track: 4200 },
+                    { pos: [160, 65], vel: [3, 0], height: 60, width: 60, track: 8100 },
+                    { pos: [810, 475], vel: [-3, 0], height: 60, width: 60, track: 8100 },],
+        title: "Timing Is Everything"
     }
 
 }
