@@ -4,8 +4,26 @@ const Wall = require('./wall.js');
 
 let that = ""
 
-function callPreview() {
-    that.preview()
+function callPreview(e) {
+    if(e.key ==="s"){
+        that.previewLevel = false;
+        that.preview();
+    }else if(e.key === "p"){
+        let ctx = that.ctx;
+        that.previewLevel = true;
+        ctx.clearRect(0, 0, 600, 1000);
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(0, 0, 1000, 600);
+        ctx.font = "30px Copperplate";
+        ctx.fillStyle = "#54FADB";
+        ctx.textAlign = "center";
+        ctx.fillText("Enter 1-6 To Play That Level", 500, 275);
+    }else if(!isNaN(e.key) && that.previewLevel === true){
+        if(e.key > 0 ){
+            that.currentLevel = e.key;
+            that.preview();
+        }
+    }
 }
 
 class GameView{
@@ -21,6 +39,7 @@ class GameView{
         this.prompts = [];
         this.currentLevel = 1;
         this.previousLevel = 0;
+        this.previewLevel = false
         document.getElementById("instructions").addEventListener("click", () => this.changeId())
         document.getElementsByClassName("modal")[0].addEventListener("click", () => this.changeId())
     }
@@ -35,7 +54,8 @@ class GameView{
 
     preview(){
         this.game.currentLevel = this.currentLevel;
-        document.getElementById("game-canvas").removeEventListener("click", callPreview);
+        // document.getElementById("game-canvas").removeEventListener("click", callPreview);
+        document.removeEventListener("keydown", callPreview);
         this.drawLevel();
         this.game.addObject();
         setTimeout(() => {
@@ -108,15 +128,29 @@ class GameView{
         if(state === "won"){
             this.currentLevel++;
             ctx.fillText("Level Completed!", Game.DIM_X / 2, Game.DIM_Y / 2);
+            if(this.previewLevel === true){
+                this.previewLevel = false;
+                this.drawTitle();
+            }else{
+                setTimeout(() => {
+                    this.ctx.clearRect(0, 0, 600, 1000);
+                    this.preview();
+                }, 1500);
+            }
         }else{
             this.score = 0;
             ctx.fillText("Level Failed!", Game.DIM_X / 2, Game.DIM_Y / 2);
             this.currentLevel = 1;
+            if (this.previewLevel === true) {
+                this.previewLevel = false;
+                this.drawTitle();
+            }else{
+                setTimeout(() => {
+                    this.ctx.clearRect(0, 0, 600, 1000);
+                    this.preview();
+                }, 1500);
+            }
         }
-        setTimeout(() => {
-            this.ctx.clearRect(0, 0, 600, 1000);
-            this.preview();
-        }, 1500);
     }
 
     getUserInput(prompts){
@@ -134,7 +168,8 @@ class GameView{
     drawTitle(){
         let ctx = this.ctx;
         that = this;
-        document.getElementById("game-canvas").addEventListener("click", callPreview);
+        // document.getElementById("game-canvas").addEventListener("click", callPreview);
+        document.addEventListener("keydown", callPreview)
         ctx.clearRect(0, 0, 600, 1000);
         ctx.fillStyle = "#000000";
         ctx.fillRect(0, 0, 1000, 600);
@@ -142,7 +177,7 @@ class GameView{
         ctx.fillStyle = "#54FADB";
         ctx.textAlign = "center";
         ctx.fillText("Hit The Target", 500, 275);
-        ctx.fillText("Click to Start", 500, 325);
+        ctx.fillText("Press S to start the Game, Press P to practice a level", 500, 325);
         this.drawScore()
     }
 
