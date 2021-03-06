@@ -175,6 +175,19 @@ const level = {
         title: "Timing Is Everything"
     }
 
+};
+
+const randonLevel = () => {
+    rLevel = {};
+    let goal = {};
+    let walls = [];
+    let energyBalls = [];
+    let coins = [];
+    let usrObject = {}
+}
+
+const randPos = () => {
+    return [Math.floor(Math.random() * (940 - 5)) + 5, Math.floor(Math.random() * (540 - 5)) + 5]
 }
 
 

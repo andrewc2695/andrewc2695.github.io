@@ -130,6 +130,7 @@ class Game {
             object.draw(ctx);
         });
     };
+
 }
 
 Game.BG_COLOR = "#000000";
