@@ -11,7 +11,8 @@ Hit the target is a game where you try to guide a robot to a rocketship by givin
 ## Code Snippet
 
 ### Hit Boxes and Hit Detection
-    The hit detection is this game was a bit challenging to do as all of the objects were of varrying sizes and the objects picture did nto fill up their hit box completely. In order to make the hit detection work and feel properly each object had to have its own variables for determing if it had a collision with the robot. The wall hit detection was especially challenging since touching the wall didnt cause an instant game over or game won. The Robot still had to be able to move after hitting a wall and not get stuck in it. My solution to this was to check to see what direction the robot was coming from and if it did colide with a wall to move it back to the minimum position it would be at before ti hit the wall.
+
+The hit detection is this game was a bit challenging to do as all of the objects were of varrying sizes and the objects picture did nto fill up their hit box completely. In order to make the hit detection work and feel properly each object had to have its own variables for determing if it had a collision with the robot. The wall hit detection was especially challenging since touching the wall didnt cause an instant game over or game won. The Robot still had to be able to move after hitting a wall and not get stuck in it. My solution to this was to check to see what direction the robot was coming from and if it did colide with a wall to move it back to the minimum position it would be at before ti hit the wall.
 
 ```js
     checkCollisions(){
