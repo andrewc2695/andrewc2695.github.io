@@ -5,7 +5,7 @@ Hit the target is a game where you try to guide a robot to a rocketship by givin
 
 ## Technologies Used
 #### vanilla JavaScript for the game logic.
-#### HTML% canvas to render the game an title screens.
+#### HTML5 canvas to render the game an title screens.
 #### Webpack to bundle the JavaScript Files.
 
 ## Code Snippet
