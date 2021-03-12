@@ -53,6 +53,7 @@ class GameView{
     }
 
     preview(){
+        debugger
         this.game.currentLevel = this.currentLevel;
         // document.getElementById("game-canvas").removeEventListener("click", callPreview);
         document.removeEventListener("keydown", callPreview);
@@ -140,7 +141,6 @@ class GameView{
         }else{
             this.score = 0;
             ctx.fillText("Level Failed!", Game.DIM_X / 2, Game.DIM_Y / 2);
-            this.currentLevel = 1;
             if (this.previewLevel === true) {
                 this.previewLevel = false;
                 this.drawTitle();

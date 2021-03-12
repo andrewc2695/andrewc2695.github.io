@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 251px;
+    
 }
 
 #top{
@@ -57,7 +58,7 @@
     background-color: #696174;
     min-height: 20px;
     border: 3px solid black;
-    word-wrap: normal;
+    padding: 5px 5px 5px 5px;
 }
 
 #directions{
