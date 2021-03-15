@@ -26,6 +26,17 @@ function callPreview(e) {
     }
 }
 
+function callFail(e){
+    if(e.key === "r"){
+        document.removeEventListener("keydown", callFail);
+        that.preview();
+    }else if(e.key === "q"){
+        document.removeEventListener("keydown", callFail);
+        that.drawTitle();
+    }
+
+}
+
 class GameView{
     constructor(ctx, game, scoreCtx){
         this.ctx = ctx;
@@ -53,7 +64,6 @@ class GameView{
     }
 
     preview(){
-        debugger
         this.game.currentLevel = this.currentLevel;
         // document.getElementById("game-canvas").removeEventListener("click", callPreview);
         document.removeEventListener("keydown", callPreview);
@@ -140,15 +150,14 @@ class GameView{
             }
         }else{
             this.score = 0;
-            ctx.fillText("Level Failed!", Game.DIM_X / 2, Game.DIM_Y / 2);
             if (this.previewLevel === true) {
-                this.previewLevel = false;
-                this.drawTitle();
-            }else{
                 setTimeout(() => {
-                    this.ctx.clearRect(0, 0, 600, 1000);
-                    this.preview();
-                }, 1500);
+                    this.previewLevel = false;
+                    this.drawTitle();
+                }, 1500)
+            }else{
+                this.ctx.clearRect(0, 0, 600, 1000);
+                this.drawFail();
             }
         }
     }
@@ -163,6 +172,20 @@ class GameView{
                 this.start();
             }
         }
+    }
+
+    drawFail(){
+        let ctx = this.ctx;
+        that = this;
+        document.addEventListener("keydown", callFail)
+        ctx.clearRect(0, 0, 600, 1000);
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(0, 0, 1000, 600);
+        ctx.font = "30px Copperplate";
+        ctx.fillStyle = "#54FADB";
+        ctx.textAlign = "center";
+        ctx.fillText("Level Failed", 500, 275);
+        ctx.fillText("Press r to retry the level, Press q to quit", 500, 325);
     }
 
     drawTitle(){
