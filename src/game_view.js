@@ -19,7 +19,7 @@ function callPreview(e) {
         ctx.textAlign = "center";
         ctx.fillText("Enter 1-6 To Play That Level", 500, 275);
     }else if(!isNaN(e.key) && that.previewLevel === true){
-        if(e.key > 0 ){
+        if(e.key > 0  && e.key < 7){
             that.currentLevel = e.key;
             that.preview();
         }
