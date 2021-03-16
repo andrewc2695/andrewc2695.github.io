@@ -56,10 +56,11 @@ class GameView{
     }
 
     changeId(){
-        if (document.getElementById("modal-hidden")){
-            document.getElementById("modal-hidden").setAttribute("id", "modal-show");
+        const modal = document.getElementById("modal-show");
+        if(modal.classList.value === "modal"){
+            modal.classList.add("appear");
         }else{
-            document.getElementById("modal-show").setAttribute("id", "modal-hidden")
+            modal.classList.remove("appear");
         }
     }
 

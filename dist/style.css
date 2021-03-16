@@ -98,7 +98,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    transition: all 300ms ease-out;
+}
+
+.modal{
+    opacity: 0;
+}
+
+.appear {
+  opacity: 1;
 }
 
 
