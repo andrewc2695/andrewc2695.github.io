@@ -58,11 +58,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     handleClick = (dir, str) => {
-        up.style.borderColor = "black"
-        down.style.borderColor = "black"
-        left.style.borderColor = "black"
-        right.style.borderColor = "black"
-        dir.style.borderColor = "blue";
+        up.style.borderColor = "darkgrey"
+        up.style.borderStyle = "outset";
+        up.style.boxShadow = "0px 3px 1px black"
+        down.style.borderColor = "darkgrey"
+        down.style.borderStyle = "outset";
+        down.style.boxShadow = "0px 3px 1px black"
+        left.style.borderColor = "darkgrey"
+        left.style.borderStyle = "outset";
+        left.style.boxShadow = "0px 3px 1px black"
+        right.style.borderColor = "darkgrey"
+        right.style.borderStyle = "outset";
+        right.style.boxShadow = "0px 3px 1px black"
+        dir.style.borderColor = "#54FADB";
+        dir.style.borderStyle = "inset";
+        dir.style.boxShadow = "0px 0px"
         input = str;
     }
 

@@ -61,8 +61,10 @@
     color: #54FADB;
     background-color: #696174;
     min-height: 20px;
-    border: 3px solid black;
+    border: 3px solid darkgrey;
+    border-style: outset;
     padding: 5px 5px 5px 5px;
+    box-shadow: 0px 3px 1px black;
 }
 
 #directions{
