@@ -42,6 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("start").addEventListener("click", () => getUserInput());
 
+    const notDir = document.getElementsByClassName("notDir")
+    for(let i = 0; i < notDir.length; i++){
+        notDir[i].addEventListener("click", buttonDown)
+    }
+
     getUserInput = () => {
         gv.getUserInput(inputArr);
     }
@@ -91,4 +96,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function buttonDown (e) {
+        let button = document.getElementById(e.currentTarget.id);
+        e.currentTarget.style.borderColor = "#54FADB";
+        e.currentTarget.style.borderStyle = "inset";
+        e.currentTarget.style.boxShadow = "0px 0px"
+        buttonUp = function(button){
+            button.style.borderColor = "darkgrey"
+            button.style.borderStyle = "outset"
+            button.style.boxShadow = "0px 3px 1px black"
+        }
+        setTimeout(buttonUp, 180, button)
+    }  
 });
