@@ -50,12 +50,21 @@ class GameView{
         this.prompts = [];
         this.currentLevel = 1;
         this.previousLevel = 0;
-        this.previewLevel = false
-        document.getElementById("instructions").addEventListener("click", () => this.changeId())
-        document.getElementsByClassName("modal")[0].addEventListener("click", () => this.changeId())
+        this.previewLevel = false;
+        document.getElementById("instructions").addEventListener("click", () => this.changeId());
+        document.getElementById("modal-show").addEventListener("click", () => this.changeId());
     }
 
     changeId(){
+        // if (document.getElementById("modal-hidden")){
+        //     document.getElementById("modal-hidden").setAttribute("id", "modal-show");
+        //     const modal = document.getElementById("modal-show");
+        //     modal.classList.add("appear");
+        // }else{
+        //     const modal = document.getElementById("modal-show");
+        //     modal.classList.remove("appear");
+        //     document.getElementById("modal-show").setAttribute("id", "modal-hidden")
+        // }
         const modal = document.getElementById("modal-show");
         if(modal.classList.value === "modal"){
             modal.classList.add("appear");

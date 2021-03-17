@@ -12,83 +12,85 @@
 
 <body>
     <div class="game-window">
-        <div id="top">
-            <div>
-                <div id="top-score">Score</div>
-                <canvas id="score"></canvas>
-            </div>
-            <div id="top-right">
-                <button class="button" id="instructions">How To Play</button>
-                <a href="https://www.linkedin.com/in/andrew-curd-054997b1/" class="button" id="linkedin">LinkedIn</a> 
-                <a href="https://github.com/andrewc2695/"class="button" id="github">GitHub</a>
-            </div>
-        </div>
-        <div id="bottom">
-            <div id="bottom-left">
-                <div>Robot Controls</div>
-                <label id="directions">Direction:
-                    <button class="button" id="up" value="up">up</button>
-                    <button class="button" id="down" value="down">down</button>
-                    <button class="button" id="left" value="left">left</button>
-                    <button class="button" id="right" value="right">right</button>
-                </label>
-                <label>Time(1000 = 1s)</label>
-                <input id="time" type="number" value="0">
-                <div id="buttons">
-                    <button class="button" id="user-input-button">Add Input</button>
-                    <button class="button" id="clear-all"><div>Clear</div> <div>All</div> <div>Inputs</div></button>
-                    <button class="button" id="remove-last"><div>Remove</div> <div>Last</div><div>Input</div></button>
-                </div>
-                <ul id="inputs">
-
-                </ul>
+        <div class="game-box">
+            <div id="top">
                 <div>
-                    <button class="button" id="start">Start!</button>
+                    <div id="top-score">Score</div>
+                    <canvas id="score"></canvas>
+                </div>
+                <div id="top-right">
+                    <button class="button" id="instructions">How To Play</button>
+                    <a href="https://www.linkedin.com/in/andrew-curd-054997b1/" class="button" id="linkedin">LinkedIn</a> 
+                    <a href="https://github.com/andrewc2695/"class="button" id="github">GitHub</a>
                 </div>
             </div>
-            <canvas id="game-canvas"></canvas>
+            <div id="bottom">
+                <div id="bottom-left">
+                    <div>Robot Controls</div>
+                    <label id="directions">Direction:
+                        <button class="button" id="up" value="up">up</button>
+                        <button class="button" id="down" value="down">down</button>
+                        <button class="button" id="left" value="left">left</button>
+                        <button class="button" id="right" value="right">right</button>
+                    </label>
+                    <label>Time(1000 = 1s)</label>
+                    <input id="time" type="number" value="0">
+                    <div id="buttons">
+                        <button class="button" id="user-input-button">Add Input</button>
+                        <button class="button" id="clear-all"><div>Clear</div> <div>All</div> <div>Inputs</div></button>
+                        <button class="button" id="remove-last"><div>Remove</div> <div>Last</div><div>Input</div></button>
+                    </div>
+                    <ul id="inputs">
+
+                    </ul>
+                    <div>
+                        <button class="button" id="start">Start!</button>
+                    </div>
+                </div>
+                <canvas id="game-canvas"></canvas>
+            </div>
         </div>
-    </div>
-    <div id="modal-show" class="modal" class="w3-modal w3-animate-opacity">
-        <div id="modal-content">
-            <div class="modal-div">
-                <div>Intructions: </div>
-                <p class="description">Use the robot controls on the left of the screen to input directions to the robot. 
-                    The directions control which way the robot will walk. The time controls how long 
-                    the robot will wait before executing the next action. If there is no next action 
-                    the robot will keep walking in the direction of the final action. Once youve inputed all 
-                    the directions you want click start! Becareful not to touch the endges of the screen or 
-                    you will lose the level!
-                    <br>
-                    Hint: Each background box takes around 500 time to move through!
-                </p>
-            </div>
-            <div class="modal-div">
-                <img class="modal-pic" src="./img/robot1.png" />
-                <p class="description">
-                    You controll this robot!
-                </p>
-            </div>
-            <div class="modal-div">
-                <img class="modal-pic" id="rocket-pic" src="./img/rocket.png"/>
-                <p class="description">Make the Robot Touch the Rocket to beat
-                    the level!
-                </p>
-            </div>
-            <div class="modal-div">
-                <img src="./img/energy1.png" class="modal-pic">
-                <p class="description">Watch out! You'll lose if the robot touches
-                     an energy ball.</p>
-            </div>
-            <div class="modal-div">
-                <img class="modal-pic" src="./img/wall.png"/>
-                <p class="description">Walls are okay to touch, but they will stop the robot from moving.</p>
-            </div>
-            <div class="modal-div">
-                <img class="modal-pic" src="./img/coin.png"/>
-                <p class="description">
-                    Pick up the Coins for bonus points!
-                </p>
+        <div id="modal-show" class="modal" class="w3-modal w3-animate-opacity">
+            <div id="modal-content">
+                <div class="modal-div">
+                    <div>Intructions: </div>
+                    <p class="description">Use the robot controls on the left of the screen to input directions to the robot. 
+                        The directions control which way the robot will walk. The time controls how long 
+                        the robot will wait before executing the next action. If there is no next action 
+                        the robot will keep walking in the direction of the final action. Once youve inputed all 
+                        the directions you want click start! Becareful not to touch the endges of the screen or 
+                        you will lose the level!
+                        <br>
+                        Hint: Each background box takes around 500 time to move through!
+                    </p>
+                </div>
+                <div class="modal-div">
+                    <img class="modal-pic" src="./img/robot1.png" />
+                    <p class="description">
+                        You controll this robot!
+                    </p>
+                </div>
+                <div class="modal-div">
+                    <img class="modal-pic" id="rocket-pic" src="./img/rocket.png"/>
+                    <p class="description">Make the Robot Touch the Rocket to beat
+                        the level!
+                    </p>
+                </div>
+                <div class="modal-div">
+                    <img src="./img/energy1.png" class="modal-pic">
+                    <p class="description">Watch out! You'll lose if the robot touches
+                        an energy ball.</p>
+                </div>
+                <div class="modal-div">
+                    <img class="modal-pic" src="./img/wall.png"/>
+                    <p class="description">Walls are okay to touch, but they will stop the robot from moving.</p>
+                </div>
+                <div class="modal-div">
+                    <img class="modal-pic" src="./img/coin.png"/>
+                    <p class="description">
+                        Pick up the Coins for bonus points!
+                    </p>
+                </div>
             </div>
         </div>
     </div>
