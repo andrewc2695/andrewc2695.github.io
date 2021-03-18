@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let inputArr = [];
 
     const up = document.getElementById("up")
-    up.addEventListener("click", () => handleClick(up, "up"));
+    up.addEventListener("click", (e) => handleClick(up, "up", e));
     const down = document.getElementById("down")
     down.addEventListener("click", () => handleClick(down, "down"));
     const left = document.getElementById("left")
@@ -62,7 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    handleClick = (dir, str) => {
+    handleClick = (dir, str, e) => {
+        debugger
         up.style.borderColor = "darkgrey"
         up.style.borderStyle = "outset";
         up.style.boxShadow = "0px 3px 1px black"

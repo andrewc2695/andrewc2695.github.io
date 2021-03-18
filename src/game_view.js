@@ -32,6 +32,7 @@ function callFail(e){
         that.preview();
     }else if(e.key === "q"){
         document.removeEventListener("keydown", callFail);
+        that.currentLevel = 1;
         that.drawTitle();
     }
 

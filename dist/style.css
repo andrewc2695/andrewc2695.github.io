@@ -6,40 +6,44 @@
     justify-content: center;
     align-items: center;
     margin-right: 251px;
+    background-image: url("../img/space.jpg");
     
 }
 
 .game-box{
-    border: 2px solid red;
+    border: 2px solid azure;
 }
 
 #top{
-    /* width: 1000px; */
-    margin-left: 212px;
     color: #54FADB;
     font-size: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: #343d52;
+}
+
+#top-left{
+    margin-left: 185px;
 }
 
 #top-right{
     width: 500px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
+    margin-right: 25px;
 }
 
 #game-canvas{
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 #bottom{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-left: 25px;
 }
 
 #bottom-left{
@@ -47,7 +51,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid black;
+    color: #54FADB;
+    background-color: #343d52;
 }
 
 .button{
