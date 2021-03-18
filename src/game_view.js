@@ -58,15 +58,6 @@ class GameView{
     }
 
     changeId(){
-        // if (document.getElementById("modal-hidden")){
-        //     document.getElementById("modal-hidden").setAttribute("id", "modal-show");
-        //     const modal = document.getElementById("modal-show");
-        //     modal.classList.add("appear");
-        // }else{
-        //     const modal = document.getElementById("modal-show");
-        //     modal.classList.remove("appear");
-        //     document.getElementById("modal-show").setAttribute("id", "modal-hidden")
-        // }
         const modal = document.getElementById("modal-show");
         if(modal.classList.value === "modal"){
             modal.classList.add("appear");
@@ -77,7 +68,6 @@ class GameView{
 
     preview(){
         this.game.currentLevel = this.currentLevel;
-        // document.getElementById("game-canvas").removeEventListener("click", callPreview);
         document.removeEventListener("keydown", callPreview);
         this.drawLevel();
         this.game.addObject();
@@ -210,7 +200,6 @@ class GameView{
     drawTitle(){
         let ctx = this.ctx;
         that = this;
-        // document.getElementById("game-canvas").addEventListener("click", callPreview);
         document.addEventListener("keydown", callPreview)
         ctx.clearRect(0, 0, 600, 1000);
         ctx.fillStyle = "#000000";

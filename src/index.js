@@ -27,13 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let parentClick = false;
 
     const up = document.getElementById("up")
-    // up.addEventListener("click", (e) => handleClick(up, "up", e));
+
     const down = document.getElementById("down")
-    // down.addEventListener("click", (e) => handleClick(down, "down", e));
+
     const left = document.getElementById("left")
-    // left.addEventListener("click", (e) => handleClick(left, "left", e));
+    
     const right = document.getElementById("right")
-    // right.addEventListener("click", (e) => handleClick(right, "right", e));
 
     document.getElementById("directions").addEventListener("click", (e) => handleClick(e))
 
@@ -68,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     handleClick = (e) => {
-        // e.preventDefault();
         if(e.target.id !== "directions"){
             up.style.borderColor = "darkgrey"
             up.style.borderStyle = "outset";

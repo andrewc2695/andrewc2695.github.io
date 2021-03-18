@@ -15,16 +15,7 @@ class UserObject extends MovingObject{
     }
 
     draw(ctx) {
-        // ctx.fillStyle = this.color;
-        // ctx.beginPath();
-        // ctx.arc(
-        //     this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true
-        // );
-        // let img = new Image();
-        // img.src = "../img/robot1.png";
-        // img.onload = function(){
         ctx.drawImage(this.currentImg, this.pos[0], this.pos[1], 55, 70)
-        // }
     }
 
     readPrompts(n, prompts) {
