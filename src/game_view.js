@@ -52,6 +52,7 @@ class GameView{
         this.currentLevel = 1;
         this.previousLevel = 0;
         this.previewLevel = false;
+        this.canStart = false;
         document.getElementById("instructions").addEventListener("click", () => this.changeId());
         document.getElementById("modal-show").addEventListener("click", () => this.changeId());
     }
@@ -87,6 +88,7 @@ class GameView{
                 this.game.draw(this.ctx);
                 this.game.previewMove();
             }, 25)
+            this.canStart = true;
         }, 1500);
     }
 
@@ -130,6 +132,7 @@ class GameView{
     };
 
     gameWon(state){
+        this.canStart = false;
         let inputs = document.getElementById("inputs");
         while (inputs.firstChild) {
                 inputs.removeChild(inputs.firstChild);
@@ -180,7 +183,9 @@ class GameView{
                 clearInterval(this.interval);
             }
             if (this.interval !== undefined || this.previewInterval !== undefined){
-                this.start();
+                if(this.canStart){
+                    this.start();
+                }
             }
         }
     }
