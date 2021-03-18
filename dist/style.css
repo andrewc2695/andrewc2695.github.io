@@ -21,10 +21,16 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: #343d52;
+    border-bottom: 2px solid azure;
 }
 
 #top-left{
-    margin-left: 185px;
+    margin-left: 187px;
+}
+
+#top-score{
+    display: flex;
+    justify-content: center;
 }
 
 #top-right{
@@ -53,6 +59,7 @@
     align-items: center;
     color: #54FADB;
     background-color: #343d52;
+    border-right: 2px solid azure;
 }
 
 .button{
