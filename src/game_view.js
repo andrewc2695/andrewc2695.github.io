@@ -154,8 +154,10 @@ class GameView{
             this.currentLevel++;
             ctx.fillText("Level Completed!", Game.DIM_X / 2, Game.DIM_Y / 2);
             if(this.previewLevel === true){
-                this.previewLevel = false;
-                this.drawTitle();
+                setTimeout(() => {
+                    this.previewLevel = false;
+                    this.drawTitle();
+                }, 1500);
             }else{
                 setTimeout(() => {
                     this.ctx.clearRect(0, 0, 600, 1000);
@@ -165,6 +167,7 @@ class GameView{
         }else{
             this.score = 0;
             if (this.previewLevel === true) {
+                ctx.fillText("Level Failed!", Game.DIM_X / 2, Game.DIM_Y / 2);
                 setTimeout(() => {
                     this.previewLevel = false;
                     this.drawTitle();
