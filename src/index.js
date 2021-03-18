@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const scoreCanvas = document.getElementById("score")
     const scoreCtx = scoreCanvas.getContext("2d")
     scoreCanvas.width = 200;
-    scoreCanvas.height = 100;
+    scoreCanvas.height = 50;
 
     const gv = new GameView(ctx, game, scoreCtx);
     gv.drawTitle();

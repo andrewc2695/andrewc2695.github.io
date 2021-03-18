@@ -217,13 +217,13 @@ class GameView{
 
     drawScore(){
         let ctx = this.scoreCtx;
-        ctx.clearRect(0, 0, 200, 150);
+        ctx.clearRect(0, 0, 200, 50);
         ctx.fillStyle = "#000000";
-        ctx.fillRect(0, 0, 200, 150);
+        ctx.fillRect(0, 0, 200, 50);
         ctx.font = "30px Copperplate";
         ctx.fillStyle = "#54FADB";
         ctx.textAlign = "center";
-        ctx.fillText(this.score, 100, 62)
+        ctx.fillText(this.score, 100, 33)
     }
 
     drawLevel(){

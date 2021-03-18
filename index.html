@@ -13,20 +13,9 @@
 <body>
     <div class="game-window">
         <div class="game-box">
-            <div id="top">
-                <div id="top-left">
-                    <div id="top-score">Score</div>
-                    <canvas id="score"></canvas>
-                </div>
-                <div id="top-right">
-                    <button class="button notDir" id="instructions">How To Play</button>
-                    <a href="https://www.linkedin.com/in/andrew-curd-054997b1/" class="button notDir" id="linkedin">LinkedIn</a> 
-                    <a href="https://github.com/andrewc2695/"class="button notDir" id="github">GitHub</a>
-                </div>
-            </div>
-            <div id="bottom">
+            <div id="left-box">
                 <div id="bottom-left">
-                    <div>Robot Controls</div>
+                    <div id="rc">Robot Controls</div>
                     <label id="directions">Direction:
                         <button class="button" id="up" value="up">up</button>
                         <button class="button" id="down" value="down">down</button>
@@ -37,19 +26,42 @@
                     <input id="time" type="number" value="0">
                     <div id="buttons">
                         <button class="button notDir" id="user-input-button">Add Input</button>
-                        <button class="button notDir" id="clear-all"><div>Clear</div> <div>All</div> <div>Inputs</div></button>
-                        <button class="button notDir" id="remove-last"><div>Remove</div> <div>Last</div><div>Input</div></button>
+                        <button class="button notDir" id="clear-all">
+                            <div>Clear</div>
+                            <div>All</div>
+                            <div>Inputs</div>
+                        </button>
+                        <button class="button notDir" id="remove-last">
+                            <div>Remove</div>
+                            <div>Last</div>
+                            <div>Input</div>
+                        </button>
                     </div>
                     <ul id="inputs">
-
+                
                     </ul>
                     <div>
                         <button class="button notDir" id="start">Start!</button>
                     </div>
                 </div>
-                <canvas id="game-canvas"></canvas>
             </div>
-        </div>
+            <div id="right">
+                <div id="top">
+                        <div id="top-left">
+                            <div id="top-score">Score</div>
+                            <canvas id="score"></canvas>
+                        </div>
+                        <div id="top-right">
+                            <button class="button notDir" id="instructions">How To Play</button>
+                            <a href="https://www.linkedin.com/in/andrew-curd-054997b1/" class="button notDir" id="linkedin" target="_blank">LinkedIn</a>
+                            <a href="https://github.com/andrewc2695/" class="button notDir" id="github" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <div id="bottom">
+                        <canvas id="game-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
         <div id="modal-show" class="modal" class="w3-modal w3-animate-opacity">
             <div id="modal-content">
                 <div class="modal-div">
