@@ -62,28 +62,32 @@ document.addEventListener("DOMContentLoaded", () => {
             inputArr.push(subArr);
             li.appendChild(document.createTextNode(`${ele}, ${time.value}`))
             inputList.appendChild(li)
+            const list = document.getElementById("inputs");
+            list.scrollTop = list.scrollHeight;
         }
     }
 
     handleClick = (e) => {
         // e.preventDefault();
-        up.style.borderColor = "darkgrey"
-        up.style.borderStyle = "outset";
-        up.style.boxShadow = "0px 3px 1px black"
-        down.style.borderColor = "darkgrey"
-        down.style.borderStyle = "outset";
-        down.style.boxShadow = "0px 3px 1px black"
-        left.style.borderColor = "darkgrey"
-        left.style.borderStyle = "outset";
-        left.style.boxShadow = "0px 3px 1px black"
-        right.style.borderColor = "darkgrey"
-        right.style.borderStyle = "outset";
-        right.style.boxShadow = "0px 3px 1px black"
-        const dir = document.getElementById(e.target.id)
-        dir.style.borderColor = "#54FADB";
-        dir.style.borderStyle = "inset";
-        dir.style.boxShadow = "0px 0px"
-        input = e.target.id;
+        if(e.target.id !== "directions"){
+            up.style.borderColor = "darkgrey"
+            up.style.borderStyle = "outset";
+            up.style.boxShadow = "0px 3px 1px black"
+            down.style.borderColor = "darkgrey"
+            down.style.borderStyle = "outset";
+            down.style.boxShadow = "0px 3px 1px black"
+            left.style.borderColor = "darkgrey"
+            left.style.borderStyle = "outset";
+            left.style.boxShadow = "0px 3px 1px black"
+            right.style.borderColor = "darkgrey"
+            right.style.borderStyle = "outset";
+            right.style.boxShadow = "0px 3px 1px black"
+            const dir = document.getElementById(e.target.id)
+            dir.style.borderColor = "#54FADB";
+            dir.style.borderStyle = "inset";
+            dir.style.boxShadow = "0px 0px"
+            input = e.target.id;
+        }
     }
 
     clearAll = () => {
