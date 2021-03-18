@@ -24,15 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let input = "";
     let inputArr = [];
+    let parentClick = false;
 
     const up = document.getElementById("up")
-    up.addEventListener("click", (e) => handleClick(up, "up", e));
+    // up.addEventListener("click", (e) => handleClick(up, "up", e));
     const down = document.getElementById("down")
-    down.addEventListener("click", () => handleClick(down, "down"));
+    // down.addEventListener("click", (e) => handleClick(down, "down", e));
     const left = document.getElementById("left")
-    left.addEventListener("click", () => handleClick(left, "left"));
+    // left.addEventListener("click", (e) => handleClick(left, "left", e));
     const right = document.getElementById("right")
-    right.addEventListener("click", () => handleClick(right, "right"));
+    // right.addEventListener("click", (e) => handleClick(right, "right", e));
+
+    document.getElementById("directions").addEventListener("click", (e) => handleClick(e))
 
     document.getElementById("user-input-button").addEventListener("click", () => addLi(input));
 
@@ -62,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    handleClick = (dir, str, e) => {
-        debugger
+    handleClick = (e) => {
+        // e.preventDefault();
         up.style.borderColor = "darkgrey"
         up.style.borderStyle = "outset";
         up.style.boxShadow = "0px 3px 1px black"
@@ -76,10 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
         right.style.borderColor = "darkgrey"
         right.style.borderStyle = "outset";
         right.style.boxShadow = "0px 3px 1px black"
+        const dir = document.getElementById(e.target.id)
         dir.style.borderColor = "#54FADB";
         dir.style.borderStyle = "inset";
         dir.style.boxShadow = "0px 0px"
-        input = str;
+        input = e.target.id;
     }
 
     clearAll = () => {
