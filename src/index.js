@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let input = "";
     let inputArr = [];
-    let parentClick = false;
 
     const up = document.getElementById("up")
 
@@ -45,6 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("start").addEventListener("click", () => getUserInput());
 
+    const volume = document.getElementById("volume")
+        volume.addEventListener("click", () => changeVolume("v"));
+    const mute = document.getElementById("mute")
+        mute.addEventListener("click", () => changeVolume("m"));
+        mute.style.display = "none"
     const notDir = document.getElementsByClassName("notDir")
     for(let i = 0; i < notDir.length; i++){
         notDir[i].addEventListener("click", buttonDown)
@@ -119,4 +123,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         setTimeout(buttonUp, 180, button)
     }  
+
+    changeVolume = (id) => {
+        let v = document.getElementById("volume");
+        let m = document.getElementById("mute");
+        if (id === "v"){
+            v.style.display = "none";
+            m.style.display = ""
+            Object.values(sounds).forEach(sound => {
+                sound.muted = true;
+            })
+        }else{
+            m.style.display = "none";
+            v.style.display = ""
+            Object.values(sounds).forEach(sound => {
+                sound.muted = false;
+            })
+        }
+        // debugger
+        
+    }
 });

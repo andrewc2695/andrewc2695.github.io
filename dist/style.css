@@ -196,3 +196,7 @@
     justify-content: center;
     margin-top: 8px;
 }
+
+#volume, #mute{
+    margin-top: 46px;
+}
