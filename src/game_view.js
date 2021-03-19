@@ -1,6 +1,7 @@
 const Game = require('./game.js');
 const Goal = require('./goal.js');
 const Wall = require('./wall.js');
+const sounds = require("../sounds/sounds.js");
 
 let that = ""
 
@@ -141,6 +142,7 @@ class GameView{
         ctx.fillStyle = "#54FADB";
         ctx.textAlign = "center";
         if(state === "won"){
+            sounds.rocketSound.play();
             this.currentLevel++;
             ctx.fillText("Level Completed!", Game.DIM_X / 2, Game.DIM_Y / 2);
             if(this.previewLevel === true){
@@ -155,6 +157,7 @@ class GameView{
                 }, 1500);
             }
         }else{
+            sounds.robotCrash.play();
             this.score = 0;
             if (this.previewLevel === true) {
                 ctx.fillText("Level Failed!", Game.DIM_X / 2, Game.DIM_Y / 2);

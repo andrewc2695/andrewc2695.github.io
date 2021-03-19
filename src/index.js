@@ -1,7 +1,7 @@
-const MovingObject = require("./moving_object.js")
-const Game = require("./game.js")
-const GameView = require("./game_view.js")
-const buttonSound = new Audio("./sounds/button.mp3")
+const MovingObject = require("./moving_object.js");
+const Game = require("./game.js");
+const GameView = require("./game_view.js");
+const sounds = require("../sounds/sounds.js");
 
 window.MovingObject = MovingObject;
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleClick = (e) => {
         if(e.target.id !== "directions"){
             debugger
-            buttonSound.play();
+            sounds.buttonSound.play();
             up.style.borderColor = "darkgrey"
             up.style.borderStyle = "outset";
             up.style.boxShadow = "0px 3px 1px black"
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function buttonDown (e) {
-        buttonSound.play()
+        sounds.buttonSound.play();
         let button = document.getElementById(e.currentTarget.id);
         e.currentTarget.style.borderColor = "#54FADB";
         e.currentTarget.style.borderStyle = "inset";

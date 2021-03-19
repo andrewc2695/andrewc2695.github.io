@@ -5,6 +5,7 @@ const levels = require("./level")
 const Goal = require("./goal")
 const EnergyBall = require("./energy_ball")
 const Coin = require("./coin")
+const sounds = require("../sounds/sounds.js");
 
 class Game {
     constructor(){
@@ -96,7 +97,8 @@ class Game {
                 }
             }else if(objects[i] instanceof Coin){
                 if (this.betweenWidth(userPos[0], obj.pos[0], obj.pos[0] + objWidth) &&
-                    this.betweenHeight(userPos[1], obj.pos[1], obj.pos[1] + objHeight)) {
+                this.betweenHeight(userPos[1], obj.pos[1], obj.pos[1] + objHeight)) {
+                    sounds.coinSound.play();
                     objects[i].pos = [2000, 2000];
                     objects[i].vel = [0, 0];
                     return [true, "coin"];
